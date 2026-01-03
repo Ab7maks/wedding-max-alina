@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Максат & Алина — 26.08.2026</title>
+  <meta name="description" content="Онлайн приглашение на свадьбу Максата и Алины — 26 августа 2026, Атырау" />
+
+  <!-- Fonts close to the reference -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&family=Allura&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --paper:#f4efe8;
+      --paper2:#f7f2ec;
+      --ink:#15110f;
+      --muted:rgba(21,17,15,.70);
+      --muted2:rgba(21,17,15,.52);
+      --line:rgba(21,17,15,.22);
+      --softline:rgba(21,17,15,.14);
+      --shadow: 0 18px 60px rgba(0,0,0,.10);
+      --radius:26px;
+      --accent:#7a6456;
+      --dark:#2a231f; /* теплый "шоколад" */
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:
+        radial-gradient(900px 520px at 10% 0%, rgba(122,100,86,.10), transparent 60%),
+        radial-gradient(900px 520px at 80% 10%, rgba(21,17,15,.06), transparent 55%),
+        var(--paper);
+      color:var(--ink);
+      font-family: Inter, system-ui,-apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    .wrap{max-width:720px;margin:0 auto;padding:18px 16px 64px}
+    .section{padding:26px 0}
+    .center{text-align:center}
+    .serif{font-family:"Cormorant Garamond", serif}
+    .script{font-family:"Allura", cursive}
+
+    /* Top */
+    .top{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:10px 6px 0}
+    .dateStack{display:flex;align-items:center;gap:18px}
+    .dateNums{font-family:"Cormorant Garamond", serif;font-size:74px;line-height:.86;font-weight:500;letter-spacing:.02em}
+    .vline{width:1px;align-self:stretch;background:var(--line);margin-top:4px}
+    .save{font-family:"Cormorant Garamond", serif;font-size:22px;letter-spacing:.06em;color:var(--muted2);margin-top:58px;text-transform:uppercase}
+
+    /* Play */
+    .music{position:relative;width:96px;height:96px;display:flex;align-items:center;justify-content:center;margin-top:6px;flex:0 0 auto;user-select:none}
+    .ring{position:absolute;inset:0;border-radius:999px;border:1px solid var(--softline);background: rgba(255,255,255,.22);backdrop-filter: blur(6px)}
+    .music svg{position:absolute;inset:0;width:100%;height:100%}
+    .playBtn{
+      width:52px;height:52px;border-radius:999px;
+      border:2px solid rgba(21,17,15,.35);
+      background: rgba(255,255,255,.65);
+      display:flex;align-items:center;justify-content:center;
+      cursor:pointer;
+      box-shadow: 0 10px 24px rgba(0,0,0,.10);
+      transition: transform .12s ease;
+    }
+    .playBtn:active{transform: scale(.98)}
+    .playIcon{width:0;height:0;margin-left:3px;border-top:8px solid transparent;border-bottom:8px solid transparent;border-left:14px solid rgba(21,17,15,.78)}
+    .pauseIcon{display:none;width:14px;height:14px;position:relative}
+    .pauseIcon:before,.pauseIcon:after{content:"";position:absolute;top:0;bottom:0;width:5px;background: rgba(21,17,15,.78);border-radius:2px}
+    .pauseIcon:before{left:0}
+    .pauseIcon:after{right:0}
+    .music.isPlaying .playIcon{display:none}
+    .music.isPlaying .pauseIcon{display:block}
+
+    /* Names */
+    .namesBig{
+      margin:54px 0 0;
+      font-family:"Cormorant Garamond", serif;
+      font-weight:500;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+      font-size:64px;
+      line-height:1.02;
+    }
+    .amp{display:block;font-family:"Cormorant Garamond", serif;font-size:48px;font-weight:400;margin:8px 0}
+
+    /* Cards */
+    .card{border-radius: var(--radius);box-shadow: var(--shadow);overflow:hidden}
+    .card.dark{background: linear-gradient(180deg, rgba(42,35,31,.98), rgba(42,35,31,.92));color: var(--paper2);position:relative}
+    .pad{padding:26px 18px}
+    .watermarkAmp{position:absolute;inset: -30px -10px auto auto;font-family:"Cormorant Garamond", serif;font-size:240px;line-height:1;color: rgba(255,255,255,.06);pointer-events:none;user-select:none}
+
+    .inviteText{text-align:center;font-family:"Cormorant Garamond", serif;font-weight:400;font-size:22px;line-height:1.55;color: rgba(255,255,255,.88)}
+    .inviteDate{font-size:44px;letter-spacing:.06em;margin:14px 0 10px;color: rgba(255,255,255,.95)}
+
+    /* Collage */
+    .collage{position:relative;padding:34px 0 18px;display:flex;justify-content:center}
+    .tiltBack{position:absolute;width:320px;height:360px;background: rgba(21,17,15,.12);border-radius:26px;transform: rotate(-10deg);top:28px}
+    .tiltBack2{position:absolute;width:320px;height:360px;background: rgba(21,17,15,.08);border-radius:26px;transform: rotate(10deg);top:24px}
+    .photoCard{position:relative;width:320px;max-width:86vw;border-radius:26px;overflow:hidden;box-shadow: 0 18px 48px rgba(0,0,0,.18);transform: translateY(10px)}
+    .photoCard img{display:block;width:100%;height:360px;object-fit:cover}
+
+    /* Titles */
+    .titleBlock{position:relative;padding:10px 0 6px;text-align:center}
+    .titleBig{font-family:"Cormorant Garamond", serif;font-size:54px;letter-spacing:.04em;text-transform:uppercase;margin:0}
+    .titleGhost{position:absolute;left:50%;top:22px;transform:translateX(-50%);font-family:"Allura", cursive;font-size:64px;color: rgba(21,17,15,.18);pointer-events:none;white-space:nowrap}
+    .titleLine{width:1px;height:34px;background:var(--line);margin:14px auto 0}
+
+    /* Location */
+    .locText{text-align:center;font-size:20px;line-height:1.7;color:var(--muted);margin:16px auto 0;max-width:560px;font-family:"Cormorant Garamond", serif}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:14px 18px;border-radius:18px;
+      border:1px solid rgba(21,17,15,.14);
+      background: rgba(255,255,255,.75);
+      text-decoration:none;
+      font-weight:700;
+      color: var(--ink);
+      box-shadow: 0 12px 26px rgba(0,0,0,.08);
+      transition: transform .10s ease, background .2s ease;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.90)}
+    .btn.dark{background: var(--dark);color: var(--paper2);border-color: rgba(255,255,255,.10)}
+
+    /* Timing */
+    .timing{max-width:520px;margin:0 auto;text-align:center;padding-top:8px}
+    .timingItem{margin:22px 0;font-family:"Cormorant Garamond", serif;color: var(--ink)}
+    .timingTime{font-size:22px;color: var(--muted2);letter-spacing:.04em}
+    .timingWhat{font-size:28px;margin-top:6px;line-height:1.2}
+    .timingLine{width:1px;height:42px;background:var(--line);margin:18px auto}
+
+    /* RSVP */
+    .formWrap{max-width:520px;margin:0 auto}
+    .label{font-family: Inter, sans-serif;font-size:13px;color: var(--muted2);margin:16px 0 8px}
+    input[type="text"]{
+      width:100%;padding:14px 16px;border-radius:22px;
+      border:1px solid rgba(21,17,15,.18);
+      background: rgba(255,255,255,.85);
+      outline:none;font-size:16px
+    }
+    .radioRow{display:grid;gap:12px;margin-top:12px}
+    .radioOpt{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:22px;border:1px solid rgba(21,17,15,.14);background: rgba(255,255,255,.70)}
+    .radioOpt input{width:18px;height:18px}
+    .submit{
+      width:100%;margin-top:16px;padding:14px 18px;border-radius:22px;
+      border:1px solid rgba(21,17,15,.10);
+      background: var(--dark);color: var(--paper2);
+      font-weight:700;font-size:16px;cursor:pointer;
+      box-shadow: 0 14px 30px rgba(0,0,0,.12)
+    }
+    .note{text-align:center;margin-top:12px;font-size:12.5px;color: var(--muted2);line-height:1.6}
+
+    /* Countdown */
+    .countRow{display:grid;grid-template-columns: repeat(4, 1fr);gap:14px;text-align:center;margin-top:16px}
+    .countNum{font-family:"Cormorant Garamond", serif;font-size:46px;letter-spacing:.08em;color: rgba(255,255,255,.96)}
+    .countLbl{font-family:"Cormorant Garamond", serif;font-size:16px;letter-spacing:.12em;text-transform:lowercase;color: rgba(255,255,255,.78);margin-top:2px}
+
+    @media (max-width:520px){
+      .dateNums{font-size:64px}
+      .save{margin-top:50px}
+      .namesBig{font-size:54px}
+      .countRow{gap:10px}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <!-- TOP -->
+    <div class="top">
+      <div class="dateStack">
+        <div class="dateNums">26<br>08<br>26</div>
+        <div class="vline"></div>
+        <div class="save serif">SAVE THE DATE</div>
+      </div>
+
+      <div class="music" id="music">
+        <div class="ring"></div>
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <defs>
+            <path id="circlePath" d="M 50,50 m -34,0 a 34,34 0 1,1 68,0 a 34,34 0 1,1 -68,0"/>
+          </defs>
+          <text font-size="9" fill="rgba(21,17,15,.55)" letter-spacing="2.2">
+            <textPath href="#circlePath" startOffset="50%" text-anchor="middle">
+              PLAY — PLAY — PLAY — PLAY — PLAY — PLAY —
+            </textPath>
+          </text>
+        </svg>
+
+        <div class="playBtn" id="playBtn" aria-label="Включить музыку">
+          <div class="playIcon"></div>
+          <div class="pauseIcon"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAMES -->
+    <div class="section center">
+      <div class="namesBig">MAKSAT<span class="amp">&</span>ALINA</div>
+    </div>
+
+    <!-- INVITATION -->
+    <div class="section">
+      <div class="card dark pad">
+        <div class="watermarkAmp">&</div>
+        <div class="inviteText">
+          Дорогие друзья!<br><br>
+          Приглашаем отпраздновать самое важное событие в нашей жизни — день свадьбы!
+          <div class="inviteDate serif">26.08.2026</div>
+          Мы будем рады видеть вас в кругу наших гостей!<br><br>
+          <span style="opacity:.92">Максат и Алина</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHOTO 1 -->
+    <div class="section">
+      <div class="collage">
+        <div class="tiltBack"></div>
+        <div class="tiltBack2"></div>
+        <div class="photoCard">
+          <img src="photo1.jpeg" alt="Фото Максата и Алины">
+        </div>
+      </div>
+    </div>
+
+    <!-- LOCATION -->
+    <div class="section" id="location">
+      <div class="titleBlock">
+        <div class="titleGhost">location</div>
+        <h2 class="titleBig">LOCATION</h2>
+        <div class="titleLine"></div>
+      </div>
+
+      <p class="locText">
+        Мы ждём вас в городе:<br>
+        <b>Атырау</b><br>
+        (точный адрес добавим позже)
+      </p>
+
+      <div class="center" style="margin-top:16px">
+        <a class="btn dark" target="_blank" rel="noopener" href="https://2gis.kz/atyrau">Ссылка 2ГИС</a>
+      </div>
+    </div>
+
+    <!-- PHOTO 2 -->
+    <div class="section">
+      <div class="collage" style="padding-top:10px">
+        <div class="tiltBack" style="height:320px; top:16px; transform: rotate(10deg)"></div>
+        <div class="tiltBack2" style="height:320px; top:10px; transform: rotate(-10deg)"></div>
+        <div class="photoCard" style="transform: translateY(8px)">
+          <img style="height:320px" src="photo2.jpeg" alt="Фото Максата и Алины">
+        </div>
+      </div>
+    </div>
+
+    <!-- TIMING -->
+    <div class="section" id="timing">
+      <div class="titleBlock">
+        <div class="titleGhost">timing</div>
+        <h2 class="titleBig">TIMING</h2>
+        <div class="titleLine"></div>
+      </div>
+
+      <div class="timing">
+        <div class="timingItem">
+          <div class="timingTime">13:00</div>
+          <div class="timingWhat">Сбор гостей и фуршет</div>
+        </div>
+
+        <div class="timingLine"></div>
+
+        <div class="timingItem">
+          <div class="timingTime">14:00</div>
+          <div class="timingWhat">Церемония бракосочетания</div>
+        </div>
+
+        <div class="timingLine"></div>
+
+        <div class="timingItem">
+          <div class="timingTime">16:00</div>
+          <div class="timingWhat">Начало банкета</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHOTO 3 (по желанию — можно убрать) -->
+    <div class="section">
+      <div class="collage" style="padding-top:10px">
+        <div class="tiltBack" style="height:320px; top:16px; transform: rotate(-10deg)"></div>
+        <div class="tiltBack2" style="height:320px; top:10px; transform: rotate(10deg)"></div>
+        <div class="photoCard" style="transform: translateY(8px)">
+          <img style="height:320px" src="photo3.jpeg" alt="Фото">
+        </div>
+      </div>
+    </div>
+
+    <!-- RSVP -->
+    <div class="section" id="rsvp">
+      <div class="titleBlock">
+        <div class="titleGhost">rsvp</div>
+        <h2 class="titleBig">RSVP</h2>
+        <div class="titleLine"></div>
+      </div>
+
+      <div class="formWrap">
+        <p class="center serif" style="font-size:22px;color:var(--muted);margin:0 0 8px">
+          Пожалуйста, подтвердите своё присутствие
+        </p>
+
+        <form id="rsvpForm">
+          <div class="label">Ваше имя и фамилия</div>
+          <input type="text" name="name" required placeholder="Например: Айгуль С." />
+
+          <div class="radioRow">
+            <label class="radioOpt"><input type="radio" name="answer" value="Я смогу прийти" checked> Я смогу прийти</label>
+            <label class="radioOpt"><input type="radio" name="answer" value="Я не смогу прийти"> Я не смогу прийти</label>
+          </div>
+
+          <button class="submit" type="submit">Отправить</button>
+          <div class="note">
+            Отправка откроет WhatsApp с готовым сообщением.
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- COUNTDOWN -->
+    <div class="section" id="countdown">
+      <div class="card dark pad" style="position:relative;">
+        <div class="watermarkAmp" style="font-size:260px; top:-60px; right:-20px;">&</div>
+
+        <div class="center serif" style="font-size:26px; letter-spacing:.02em; color:rgba(255,255,255,.92)">
+          До мероприятия:
+        </div>
+
+        <div class="countRow">
+          <div>
+            <div class="countNum" id="cd_d">00</div>
+            <div class="countLbl">день</div>
+          </div>
+          <div>
+            <div class="countNum" id="cd_h">00</div>
+            <div class="countLbl">час</div>
+          </div>
+          <div>
+            <div class="countNum" id="cd_m">00</div>
+            <div class="countLbl">минут</div>
+          </div>
+          <div>
+            <div class="countNum" id="cd_s">00</div>
+            <div class="countLbl">секунд</div>
+          </div>
+        </div>
+
+        <div class="center" style="margin-top:14px;font-size:12.5px;color:rgba(255,255,255,.68)">
+          Музыка: «Shape of Love» — Ed Sheeran (добавьте файл <b>music.mp3</b> рядом с сайтом)
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio: положите рядом файл music.mp3 -->
+  <audio id="audio" preload="auto">
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // ===== MUSIC =====
+    const music = document.getElementById('music');
+    const btn = document.getElementById('playBtn');
+    const audio = document.getElementById('audio');
+
+    function toggleMusic(){
+      // если файла нет, браузер не сможет проиграть — покажем подсказку
+      if (!audio.duration && audio.readyState === 0) {
+        alert('Музыка не найдена. Положите файл "music.mp3" рядом с index.html (в ту же папку) и обновите страницу.');
+        return;
+      }
+      if(audio.paused){
+        audio.play().then(()=> music.classList.add('isPlaying')).catch(()=>{});
+      }else{
+        audio.pause();
+        music.classList.remove('isPlaying');
+      }
+    }
+    btn.addEventListener('click', toggleMusic);
+
+    // ===== RSVP to WhatsApp =====
+    const WHATSAPP_NUMBER = "77771357733";
+
+    document.getElementById('rsvpForm').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      const name = fd.get('name');
+      const answer = fd.get('answer');
+
+      const text =
+`RSVP на свадьбу Максат & Алина (26.08.2026)
+Имя: ${name}
+Ответ: ${answer}`;
+
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+      window.open(url, "_blank");
+    });
+
+    // ===== COUNTDOWN =====
+    const target = new Date('2026-08-26T13:00:00');
+    const D = document.getElementById('cd_d');
+    const H = document.getElementById('cd_h');
+    const M = document.getElementById('cd_m');
+    const S = document.getElementById('cd_s');
+
+    function tick(){
+      const now = new Date();
+      let diff = Math.max(0, target - now);
+
+      const days = Math.floor(diff / (1000*60*60*24));
+      diff -= days * (1000*60*60*24);
+      const hours = Math.floor(diff / (1000*60*60));
+      diff -= hours * (1000*60*60);
+      const mins = Math.floor(diff / (1000*60));
+      diff -= mins * (1000*60);
+      const secs = Math.floor(diff / 1000);
+
+      D.textContent = String(days).padStart(2,'0');
+      H.textContent = String(hours).padStart(2,'0');
+      M.textContent = String(mins).padStart(2,'0');
+      S.textContent = String(secs).padStart(2,'0');
+    }
+    tick();
+    setInterval(tick, 1000);
+  </script>
+</body>
+</html>
