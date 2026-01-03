@@ -360,7 +360,7 @@
   </div>
 
   <!-- Audio: положите рядом файл music.mp3 -->
-  <audio id="audio" preload="auto">
+  <audio id="audio" preload="auto" playsinline>
     <source src="music.mp3" type="audio/mpeg">
   </audio>
 
@@ -370,20 +370,28 @@
     const btn = document.getElementById('playBtn');
     const audio = document.getElementById('audio');
 
-    function toggleMusic(){
-      // если файла нет, браузер не сможет проиграть — покажем подсказку
-      if (!audio.duration && audio.readyState === 0) {
-        alert('Музыка не найдена. Положите файл "music.mp3" рядом с index.html (в ту же папку) и обновите страницу.');
-        return;
-      }
-      if(audio.paused){
-        audio.play().then(()=> music.classList.add('isPlaying')).catch(()=>{});
-      }else{
-        audio.pause();
-        music.classList.remove('isPlaying');
-      }
-    }
-    btn.addEventListener('click', toggleMusic);
+function toggleMusic(){
+  // Safari fix
+  audio.load();
+
+  if (audio.paused) {
+    audio.play().then(() => {
+      music.classList.add('isPlaying');
+    }).catch(err => {
+      alert(
+        'Музыка не запустилась 😢\n' +
+        'Проверь:\n' +
+        '1) файл music.mp3 в корне\n' +
+        '2) попробуй ещё раз нажать Play'
+      );
+      console.log(err);
+    });
+  } else {
+    audio.pause();
+    music.classList.remove('isPlaying');
+  }
+}
+
 
     // ===== RSVP to WhatsApp =====
     const WHATSAPP_NUMBER = "77771357733";
